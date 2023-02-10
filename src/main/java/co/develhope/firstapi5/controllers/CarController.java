@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/cars")
 public class CarController {
 
-    @GetMapping
+    @GetMapping("/get")
     public CarDTO getCar(){
         return new CarDTO("01", "fiat", 12.000);
     }
 
-    @PostMapping
+    @PostMapping("/post")
     public ResponseEntity<String> addCar(@RequestBody CarDTO car) {
         System.out.println("Car ID: " + car.getId());
         System.out.println("Car Model: " + car.getModelName());
